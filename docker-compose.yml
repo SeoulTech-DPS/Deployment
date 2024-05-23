@@ -17,10 +17,10 @@ services:
       - backend_network
 
   web:
-    build: ./ToolTrack-backend
+    build: ./backend
     command: bash -c "python manage.py makemigrations Borrow && python manage.py makemigrations Room && python manage.py makemigrations Student && python manage.py makemigrations Add && python manage.py migrate && python manage.py populate_db && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./ToolTrack-backend:/app
+      - ./backend:/app
     ports:
       - "8000:8000"
     depends_on:
@@ -52,12 +52,12 @@ services:
 
   frontend:
     build:
-      context: ./ToolTrack-frontend
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./ToolTrack-frontend:/usr/app
+      - ./frontend:/usr/app
       - /usr/app/node_modules
     environment:
       - NODE_ENV=development
