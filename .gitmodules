@@ -1,6 +1,0 @@
-[submodule "ToolTrack-frontend"]
-	path = ToolTrack-frontend
-	url = https://github.com/SeoulTech-DPS/ToolTrack-frontend.git
-[submodule "ToolTrack-backend"]
-	path = ToolTrack-backend
-	url = https://github.com/SeoulTech-DPS/ToolTrack-backend.git
